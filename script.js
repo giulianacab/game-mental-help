@@ -75,7 +75,8 @@ let app = {
         if(this.currentQ.correctAnswer == user){
             console.log ("Obrigada!")
             this.totalPoints++;
-            //troca foto do coração
+            //troca foto do coração:
+            //se a pontuação for 0, foto heartScore0; se pontuação=1, heartScore25; ...
         } else {
             console.log ("Poxa...")
             //manter foto do coração que estiver
