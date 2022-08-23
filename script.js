@@ -32,18 +32,18 @@ let app = {
 
     start: function() {
         this.currentPos = 0;
-        this.updateScore = 0;
+        //this.updateScore = 0;
         let alts = document.querySelectorAll('.choices');
         alts.forEach((element, index) => {
             element.addEventListener('click', () => {
                 this.isCorrect(index);
             })
         })
-        // this.updateScore(); -- DANDO ERRO NESSA MERDA, falando que não é uma função. mas é sim, lá no final!!!!
+        this.updateScore(); //-- DANDO ERRO NESSA MERDA, falando que não é uma função. mas é sim, lá no final!!!!
         app.showQuestions(questions[this.currentPos]);
     },
 
-    showQuestions: function(q){
+    showQuestions: function(q) {
         this.currentQ = q;
         //mostra o título
         let titleDiv = document.getElementById('questionTitle');
@@ -56,7 +56,7 @@ let app = {
         });
     },
 
-    nextQuestion: function(user){
+    nextQuestion: function(user) {
         this.currentPos++;
         if(this.currentPos == questions.length) {
             this.currentPos = 0;
@@ -68,19 +68,37 @@ let app = {
         if(this.currentQ.correctAnswer == user){
             console.log ("Obrigada!")
             this.totalPoints++;
+            this.showCorrectQuestion();
         } else {
             console.log ("Poxa...")
         };
-        // this.updateScore(); -- dando merda
+        this.updateScore(); //-- dando merda
         this.nextQuestion();
         this.showQuestions(questions[this.currentPos]);
     },
 
-    updateScore: function(){
+    updateScore: function() {
         let scoreDiv = document.getElementById('score');
         scoreDiv.textContent = `Até agora, você ajudou ${this.totalPoints} vezes`;
     },
 
+    showCorrectQuestion: function (correct) {
+        let correctQuestionDiv = document.getElementById('correctQuestion');
+        let correctQuestion = [""];
+
+        if (correct == true) {
+            correctQuestion = [""];
+        } else {
+            let question = questions[this.currentPos];
+            let correctIndex = questions.correctAnswer;
+            let correctText = questions.alternatives.correctAnswer;
+            correctQuestion = `O melhor era ter respondido: ${this.correctAnswer}`;
+        }
+
+        correctQuestionDiv.textContent = correctQuestion;
+    },
+
+    
 };
 
 app.start();
