@@ -1,3 +1,5 @@
+/* HEADER DA PÁGINA */
+
 header {
     background-color: #f6f6f6;
     padding: 20px;
@@ -8,20 +10,9 @@ header {
 
     display: flex;
     flex-direction: row;
-    position: relative;
+    position: absolute;
+    width: 100%;
     top: 0;
-}
-
-.exitButton {
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-
-    width: 25px;
-
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 25px;
 }
 
 .profilePic {
@@ -33,7 +24,7 @@ header {
 
     padding-left: 120px;
     padding-right: 20px;
-    padding-top: 12px;
+    padding-top: 38px;
 }
 
 #nameGame {
@@ -48,140 +39,141 @@ header {
 
     padding-left: 20px;
     padding-right: 20px;
-
+    padding-top: 25px;
 }
 
-.heartScore {
-    display: flex;
-    flex-direction: row;
-    justify-content: right;
 
-    position: absolute;
-    right: 100px;
-    margin-top: 12px;
-}
 
-#heart100full, #heart100, #heart75, #heart50, #heart25, #heart0 {
-    width: 50px;
-    height: 50px;
 
-    display: flex;
-    flex-direction: row;
-    justify-content: right;
-
-    margin-right: -50px;
-}
-
+/* CORPO DA PÁGINA */
 
 body {
     /*imagem de fundo de whatsapp, criar topo, bg, balões de chat e parte da resposta*/
     background-image: url("https://github.com/ShKev03/WhatsChat/blob/main/src/background.png?raw=true"); /*(colocar divzona so pra isso)*/
     background-size:100%;
-    background-repeat: repeat-y;
-    display: flex;
-    flex-direction: column;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-.chatQuestion {
-    display: flex;
-    flex-direction: column;
-}
-
-#questionTitle {
-    font-size: 15px;
+h1 {
+    font-size: 20px;
+    text-align: left;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color:#566552;
+    background-color: #ffffff;
+
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: left;
     position: left;
-    right: 0px;
-    width: 300px;
+    left: 0px;
+
+    width: 350px;
     border: 3px solid #ffffff;
     border-radius: 20px;
-    padding: 15px;
-    background-color: #ffffff;
+
+    padding: 25px;
+    margin-left: 30px;
+    margin-top: 150px;
+    line-height: 28px;
 }
 
-.alts {
-    display: flex;
-    flex-direction: column;
-    padding: 15px;
-    margin: 10px;
-}
-
-.chatAlts {
-    text-align: right;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+.initialForm {
     display: flex;
     flex-direction: row;
     justify-content: right;
-    right: 0px;
+    position:fixed;
+    right: 0;
+
+    padding: 20px;
+    margin-right: 30px;
 }
 
-.choices {
-    font-size: 15px;
+#userName {
+    font-size: 25px;
     text-align: right;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: #566552;
+    background-color: #dbffd0;
+
     display: flex;
     flex-direction: column;
+    justify-content: right;
     position: right;
+    right: 0px;
+
     width: 300px;
     border: 3px solid #dbffd0;
     border-radius: 20px;
+
     padding: 15px;
     margin: 10px;
-    background-color: #dbffd0;
 }
 
-.chatAnswer {
-    text-align: right;
+#buttonStart {
+    font-size: 20px;
+    text-align: center;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: #566552;
-    justify-content: right;
-    position:right;
+    font-weight: bold;
+    color:#ffffff;
+    background-color: #566552;
+
     display: flex;
-    flex-direction: column;
-    width: 100px;
+    flex-direction: row;
+    justify-content: center;
+    position: absolute;
+
+    width: 90%;
+    border: 3px solid #566552;
+    border-radius: 60px;
+
+    padding: 25px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 200px;
+    line-height: 18px;
 }
 
-#score {
-    font-size: 15px;
-    font-weight:600;
-    font-family:Verdana, Geneva, Tahoma, sans-serif
-}
 
+
+/* FOOTER */
 
 .footer {
-    display: flex;
     background-color: #f6f6f6;
-    align-content: flex-end;
-    align-self: flex-end;
+
     padding: 20px;
     margin-right: -10px;
+    margin-left: -10px;
 
+    align-content: flex-end;
+    align-self: flex-end;
+    display: flex;
     position: absolute;
     bottom: 0;
-    width: 100%;
-    height: 60px;    
+
+    width: auto;
+    height:auto;    
     text-align: center;
     line-height: 20px;
 }
 
 #chatTyping {
-    position: flex;
     background-color: #ffffff;
-    width: 100%;
-    align-content: flex-end;
-    align-self: flex-end;
-    text-align: left;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 15px;
     color: #566552;
-    padding-left: 20px;
-    margin-left: 40px;
+
     border: 3px solid #ffffff;
     border-radius: 20px;
+
+    align-content: flex-end;
+    align-self: flex-end;
+    text-align: left;
+    position: flex;
+    
+    width: auto;
+    height: auto;
+    padding-left: 20px;
+    margin-left: 20px;
 }
 

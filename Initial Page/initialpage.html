@@ -8,7 +8,7 @@
     <meta name="description" content="Mental Help Game">
 
     <!--Favicon-->
-    <link rel="icon" type="image/x-icon" href="./favicon_io/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../favicon_io/favicon.ico">
 
     <!--Título no navegador-->
     <title>Mental Help Game</title>
@@ -21,9 +21,6 @@
     <!--Topo da página, header da conversa-->
     <div class="alts">    
         <header>
-            <div>
-                <img class="exitButton" src="https://openclipart.org/image/400px/324409">
-            </div>
 
             <div>
                 <img class="profilePic" src="https://images.emojiterra.com/twitter/v13.1/512px/1f9e0.png">
@@ -32,23 +29,26 @@
             <div>
                 <p id="nameGame">Mental Help Game</p>
             </div>
-         
-            <div class="heartScore" onchange="heartScoreChange()">
-                <img src="https://images2.imgbox.com/f9/74/38N0DS0p_o.png" id="heart100full" onchange="heartScoreChange()">
-                <img src="https://thumbs2.imgbox.com/b6/ae/wuo261Ol_t.png" id="heart100" onchange="heartScoreChange()">
-                <img src="https://thumbs2.imgbox.com/ec/d3/10ljH0CV_t.png" id="heart75" onchange="heartScoreChange()">
-                <img src="https://thumbs2.imgbox.com/99/4d/4ECTjfs7_t.png" id="heart50" onchange="heartScoreChange()">
-                <img src="https://thumbs2.imgbox.com/be/5c/mI2wEfd3_t.png" id="heart25" onchange="heartScoreChange()">
-                <img src="https://thumbs2.imgbox.com/ac/6b/ART2CoYP_t.png" id="heart0" onchange="heartScoreChange()">
-            </div>
 
         </header>
 
+        <!--Primeira mensagem inicial-->
+        <div>
+            <h1>Ajude uma pessoa a se sentir melhor ou seja bloqueado no WhatsApp dela! Qual seu nome? Digite aqui embaixo 👇 e depois clique em "começar"</h1>
+        </div>
+
         <!--"Formulário" pra dar boas vindas + pegar nome-->
         <div class="initialForm">
-            <form>
-                <input type="text" id="nameGame">
+            <form class="initialForm">
+                <input type="text" id="userName">
             </form>
+        </div>
+
+        <!--Botão de começar o jogo-->
+        <div>
+            <a href="../Game Page/main.html">
+            <button id="buttonStart" onclick="../Game Page/main.html">COMEÇAR!</button>
+            </a>
         </div>
 
 
@@ -58,7 +58,7 @@
     </div>
 
     <!--Link c/ Javascript-->
-    <script src="./script_initialpage.js"></script>
+    <script src="../script_initialpage.js"></script>
 
 </body>
 </html>
