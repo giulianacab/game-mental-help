@@ -1,5 +1,14 @@
-//criar objeto pergunta com atributos:
-// titulo, array com 4 alternativas, e variavel que vai guardar qual posição da array é a resposta correta
+//Const com cada um dos corações:
+const heart0 = document.querySelector("#heart0");
+const heartEmpty = "../heartScore/heartScore 0.png"
+const heart25 = "../heartScore/heartScore 25.png"
+const heart50 = "../heartScore/heartScore 50.png"
+const heart75 = "../heartScore/heartScore 75.png"
+const heart100 = "../heartScore/heartScore 100.png"
+const heart100full = "../heartScore/heartScore 100full.png"
+
+let totalPoints = 0;
+
 
 let questions = [
     {
@@ -34,6 +43,7 @@ let questions = [
     },
 ];
 
+
 let app = {
 
     start: function() {
@@ -57,6 +67,7 @@ let app = {
         let alts = document.querySelectorAll('.choices');
         alts.forEach(function(element, index) {
             element.textContent = q.alternatives[index];
+            
         });
     },
 
@@ -65,64 +76,56 @@ let app = {
         if(this.currentPos == questions.length) {
             this.currentPos = 0;
             //depois, fazer uma nova página com coraçãozinho se acertou pelo menos 3 - se acertou 2 ou menos, mostrar msg de "Você foi bloqueado por esse contato"
-        }
+        };
+        this.heartScoreChange();
     },
-
-
 
 
     isCorrect: function(user) {
         if(this.currentQ.correctAnswer == user){
             console.log ("Obrigada!")
-            this.totalPoints++;
+            this.updateScore();
             //troca foto do coração:
             //se a pontuação for 0, foto heartScore0; se pontuação=1, heartScore25; ...
         } else {
             console.log ("Poxa...")
+            totalPoints--;
             //manter foto do coração que estiver
         };
         this.nextQuestion();
         this.showQuestions(questions[this.currentPos]);
-        this.heartScoreChange();
+        
     },
 
     updateScore: function() {
-        let scoreDiv = document.getElementById('score');
+        totalPoints++;
+        console.log(totalPoints)
+
     },
 
     heartScoreChange: function() {
         if(totalPoints == 0) {
-           // img = document.querySelector("https://thumbs2.imgbox.com/ac/6b/ART2CoYP_t.png")
-            document.getElementById('heart0').src="https://thumbs2.imgbox.com/ac/6b/ART2CoYP_t.png"
-           // document.getElementById('heart0').src="./heartScore 0.png"
-        } else if(totalPoints == 1) {
-           // img = document.querySelector("https://thumbs2.imgbox.com/be/5c/mI2wEfd3_t.png")
-            document.getElementById('heart0').src="https://thumbs2.imgbox.com/be/5c/mI2wEfd3_t.png"
-           // document.getElementById('heart0').src="./heartScore 25.png"
-        } else if(totalPoints == 2) {
-           // img = document.querySelector("https://thumbs2.imgbox.com/99/4d/4ECTjfs7_t.png")
-            document.getElementById('heart25').src="https://thumbs2.imgbox.com/99/4d/4ECTjfs7_t.png"
-           // document.getElementById('heart25').src="./heartScore 50.png"
-        } else if(totalPoints == 3) {
-           // img = document.querySelector("https://thumbs2.imgbox.com/ec/d3/10ljH0CV_t.png")
-            document.getElementById('heart50').src="https://thumbs2.imgbox.com/ec/d3/10ljH0CV_t.png"
-           // document.getElementById('heart50').src="./heartScore 75.png"
-        } else if(totalPoints == 4) {
-           // img = document.querySelector("https://thumbs2.imgbox.com/b6/ae/wuo261Ol_t.png")
-            document.getElementById('heart75').src="https://thumbs2.imgbox.com/b6/ae/wuo261Ol_t.png"
-           // document.getElementById('heart75').src="./heartScore 100.png"
-        } else if(totalPoints == 5) {
-           // img = document.querySelector("https://images2.imgbox.com/f9/74/38N0DS0p_o.png")
-            document.getElementById('heart100').src="https://images2.imgbox.com/f9/74/38N0DS0p_o.png"
-           // document.getElementById('heart100').src="./heartScore 100full.png"
+            heart0.setAttribute("src", heartEmpty)
+         } else if(totalPoints == 1) {
+            heart0.setAttribute("src", heart25)
+         } else if(totalPoints == 2) {
+            heart0.setAttribute("src", heart50)
+         } else if(totalPoints == 3) {
+            heart0.setAttribute("src", heart75)
+         } else if(totalPoints == 4) {
+            heart0.setAttribute("src", heart100)
+         } else if(totalPoints == 5) {
+            heart0.setAttribute("src", heart100full)
+         
+            //Encerrar o jogo na página com msg de coração + obrigada
+         } else {
+             //Encerrar o jogo na página com msg de bloqueio
+         }
+     },
 
-        
-           //Encerrar o jogo na página com msg de coração + obrigada
-        } else {
-            //Encerrar o jogo na página com msg de bloqueio
-        }
-    },
+    
     
 };
 
 app.start();
+// heart0.addEventListener('show', updateScore);?????

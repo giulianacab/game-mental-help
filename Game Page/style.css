@@ -61,7 +61,7 @@ header {
     margin-top: 12px;
 }
 
-#heart100full, #heart100, #heart75, #heart50, #heart25, #heart0 {
+#heart100full {
     width: 50px;
     height: 50px;
 
@@ -70,8 +70,73 @@ header {
     justify-content: right;
 
     margin-right: -50px;
+
 }
 
+#heart100 {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+
+    margin-right: -50px;
+
+    display: none;
+}
+
+#heart75 {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+
+    margin-right: -50px;
+
+    display: none;
+}
+
+#heart50 {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+
+    margin-right: -50px;
+
+    display: none;
+}
+
+#heart25 {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+
+    margin-right: -50px;
+
+    display: none;
+}
+
+#heart0 {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+
+    margin-right: -50px;
+
+
+}
 
 body {
     /*imagem de fundo de whatsapp, criar topo, bg, balões de chat e parte da resposta*/

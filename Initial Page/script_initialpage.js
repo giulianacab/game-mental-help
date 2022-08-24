@@ -1,5 +1,11 @@
-//criar objeto pergunta com atributos:
-// titulo, array com 4 alternativas, e variavel que vai guardar qual posição da array é a resposta correta
+//Const com cada um dos corações:
+const heart100full = document.querySelector(".heart100full");
+const heart100 = document.querySelector(".heart100");
+const heart75 = document.querySelector(".heart75");
+const heart50 = document.querySelector(".heart50");
+const heart25 = document.querySelector(".heart25");
+const heart0 = document.querySelector(".heart0");
+
 
 let questions = [
     {
@@ -10,6 +16,7 @@ let questions = [
     },
 ];
 
+
 let initialPage = [
     { 
     title: 'Ajude uma pessoa a se sentir melhor ou seja bloqueado no WhatsApp dela! Qual seu nome?'
@@ -17,6 +24,7 @@ let initialPage = [
     
     }
 ]
+
 
 let app = {
 
@@ -31,6 +39,7 @@ let app = {
         app.showQuestions(questions[this.currentPos]);
     },
 
+
     showQuestions: function(q) {
         this.currentQ = q;
         //mostra o título
@@ -44,12 +53,14 @@ let app = {
         });
     },
 
+
     nextQuestion: function(user) {
         this.currentPos++;
         if(this.currentPos == questions.length) {
             this.currentPos = 0;
             //depois, fazer uma nova página com coraçãozinho se acertou pelo menos 3 - se acertou 2 ou menos, mostrar msg de "Você foi bloqueado por esse contato"
         }
+        this.heartScoreChange();
     },
 
 
@@ -67,36 +78,38 @@ let app = {
         };
         this.nextQuestion();
         this.showQuestions(questions[this.currentPos]);
+
     },
 
     updateScore: function() {
         let scoreDiv = document.getElementById('score');
+   
     },
 
     heartScoreChange: function() {
         if(totalPoints == 0) {
            // img = document.querySelector("https://thumbs2.imgbox.com/ac/6b/ART2CoYP_t.png")
-            document.getElementById('heart0').src="https://thumbs2.imgbox.com/ac/6b/ART2CoYP_t.png"
+            document.getElementById('heart0').src=heart0
            // document.getElementById('heart0').src="./heartScore 0.png"
         } else if(totalPoints == 1) {
            // img = document.querySelector("https://thumbs2.imgbox.com/be/5c/mI2wEfd3_t.png")
-            document.getElementById('heart0').src="https://thumbs2.imgbox.com/be/5c/mI2wEfd3_t.png"
+            document.getElementById('heart0').src=heart25
            // document.getElementById('heart0').src="./heartScore 25.png"
         } else if(totalPoints == 2) {
            // img = document.querySelector("https://thumbs2.imgbox.com/99/4d/4ECTjfs7_t.png")
-            document.getElementById('heart25').src="https://thumbs2.imgbox.com/99/4d/4ECTjfs7_t.png"
+            document.getElementById('heart25').src=heart50
            // document.getElementById('heart25').src="./heartScore 50.png"
         } else if(totalPoints == 3) {
            // img = document.querySelector("https://thumbs2.imgbox.com/ec/d3/10ljH0CV_t.png")
-            document.getElementById('heart50').src="https://thumbs2.imgbox.com/ec/d3/10ljH0CV_t.png"
+            document.getElementById('heart50').src=heart75
            // document.getElementById('heart50').src="./heartScore 75.png"
         } else if(totalPoints == 4) {
            // img = document.querySelector("https://thumbs2.imgbox.com/b6/ae/wuo261Ol_t.png")
-            document.getElementById('heart75').src="https://thumbs2.imgbox.com/b6/ae/wuo261Ol_t.png"
+            document.getElementById('heart75').src=heart100
            // document.getElementById('heart75').src="./heartScore 100.png"
         } else if(totalPoints == 5) {
            // img = document.querySelector("https://images2.imgbox.com/f9/74/38N0DS0p_o.png")
-            document.getElementById('heart100').src="https://images2.imgbox.com/f9/74/38N0DS0p_o.png"
+            document.getElementById('heart100').src=heart100full
            // document.getElementById('heart100').src="./heartScore 100full.png"
 
         
