@@ -11,7 +11,7 @@ let questions = [
 
     {
     title: 'Ontem eu fui ao psiquiatra e fui diagnosticado com transtorno bipolar... 😟',
-    alternatives: ["Nossa! Como você está se sentindo com isso?", "Que besteira, todo mundo é um pouco bipolar kkkk", "Nossa, você vai em médico de gente louca!", "*Você foi bloqueado por esse contato*"],
+    alternatives: ["Nossa! Como você está se sentindo com isso?", "Que besteira, todo mundo é um pouco bipolar kkkk", "Nossa, você vai em médico de gente louca!", "*Bloqueado*"],
     correctAnswer: 0
     },
 
@@ -87,7 +87,39 @@ let app = {
 
     updateScore: function() {
         let scoreDiv = document.getElementById('score');
-        // É aqui que vou ter que fazer a foto do coração trocar de acordo com quantos pontos a pessoa esteja, né?
+    },
+
+    heartScoreChange: function() {
+        if(totalPoints == 0) {
+           // img = document.querySelector("https://thumbs2.imgbox.com/ac/6b/ART2CoYP_t.png")
+            document.getElementById('heart0').src="https://thumbs2.imgbox.com/ac/6b/ART2CoYP_t.png"
+           // document.getElementById('heart0').src="./heartScore 0.png"
+        } else if(totalPoints == 1) {
+           // img = document.querySelector("https://thumbs2.imgbox.com/be/5c/mI2wEfd3_t.png")
+            document.getElementById('heart0').src="https://thumbs2.imgbox.com/be/5c/mI2wEfd3_t.png"
+           // document.getElementById('heart0').src="./heartScore 25.png"
+        } else if(totalPoints == 2) {
+           // img = document.querySelector("https://thumbs2.imgbox.com/99/4d/4ECTjfs7_t.png")
+            document.getElementById('heart25').src="https://thumbs2.imgbox.com/99/4d/4ECTjfs7_t.png"
+           // document.getElementById('heart25').src="./heartScore 50.png"
+        } else if(totalPoints == 3) {
+           // img = document.querySelector("https://thumbs2.imgbox.com/ec/d3/10ljH0CV_t.png")
+            document.getElementById('heart50').src="https://thumbs2.imgbox.com/ec/d3/10ljH0CV_t.png"
+           // document.getElementById('heart50').src="./heartScore 75.png"
+        } else if(totalPoints == 4) {
+           // img = document.querySelector("https://thumbs2.imgbox.com/b6/ae/wuo261Ol_t.png")
+            document.getElementById('heart75').src="https://thumbs2.imgbox.com/b6/ae/wuo261Ol_t.png"
+           // document.getElementById('heart75').src="./heartScore 100.png"
+        } else if(totalPoints == 5) {
+           // img = document.querySelector("https://images2.imgbox.com/f9/74/38N0DS0p_o.png")
+            document.getElementById('heart100').src="https://images2.imgbox.com/f9/74/38N0DS0p_o.png"
+           // document.getElementById('heart100').src="./heartScore 100full.png"
+
+        
+           //Encerrar o jogo na página com msg de coração + obrigada
+        } else {
+            //Encerrar o jogo na página com msg de bloqueio
+        }
     },
 
     
