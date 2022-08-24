@@ -83,6 +83,7 @@ let app = {
         };
         this.nextQuestion();
         this.showQuestions(questions[this.currentPos]);
+        this.heartScoreChange();
     },
 
     updateScore: function() {
@@ -121,7 +122,6 @@ let app = {
             //Encerrar o jogo na página com msg de bloqueio
         }
     },
-
     
 };
 
