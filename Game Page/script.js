@@ -57,6 +57,7 @@ let app = {
         app.showQuestions(questions[this.currentPos]);
     },
 
+
     showQuestions: function(q) {
         this.currentQ = q;
         //mostra o título

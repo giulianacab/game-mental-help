@@ -1,13 +1,11 @@
-let start = {
+const startButton = document.querySelector(".buttonStart");
 
-    startGame: function() {
-        buttonStart = document.getElementById('buttonStart');
+startButton.addEventListener("click", function(e) {
+    e.preventDefault();
 
-        if('click', buttonStart() {
-            window.location.href = "../Game Page/main.html"
-        })
-    };
+    const userName = document.querySelector("#userName");
 
-}
+    const value = userName.value;
 
-
+    console.log(userName);
+});
